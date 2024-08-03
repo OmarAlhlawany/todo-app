@@ -1,0 +1,15 @@
+<ul class="todo-list m-5 bg-dark min-vh-100 p-5">
+  <li *ngFor="let todo of todos" class="todo-item">
+    <span [ngClass]="{ completed: todo.isCompleted }" class="todo-title">{{
+      todo.title
+    }}</span>
+    <div>
+    <button (click)="toggleTodoCompletion(todo)" class="todo-toggle-button">
+      {{ todo.isCompleted ? "Mark as Not Done!" : "Mark as Done!" }}
+    </button>
+    <button (click)="deleteTodo(todo.id)" class="todo-delete-button">
+      Delete
+    </button>
+    </div>
+  </li>
+</ul>
